@@ -1,6 +1,5 @@
 import { useFormContext } from "../hooks/useFormContext";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { PatternFormat } from "react-number-format";
 
 interface FormFields {
   name: string;
