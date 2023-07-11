@@ -10,6 +10,9 @@ interface IFormContext {
   billingPeriod: billingOptionsType;
   plan: planType | null;
   addOns: addonsType[];
+  updateName: (str: string) => void;
+  updateEmail: (str: string) => void;
+  updatePhoneNumber: (str: string) => void;
 }
 
 interface IProps {
@@ -32,6 +35,16 @@ export default function FormContextProvider({ children }: IProps) {
     setStep(next);
   };
 
+  const updateName = (str: string) => {
+    setName(str);
+  };
+  const updateEmail = (str: string) => {
+    setEmail(str);
+  };
+  const updatePhoneNumber = (str: string) => {
+    setPhoneNumber(str);
+  };
+
   return (
     <FormContext.Provider
       value={{
@@ -43,6 +56,9 @@ export default function FormContextProvider({ children }: IProps) {
         billingPeriod,
         plan,
         addOns,
+        updateName,
+        updateEmail,
+        updatePhoneNumber,
       }}
     >
       {children}

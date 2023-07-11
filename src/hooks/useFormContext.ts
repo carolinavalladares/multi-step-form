@@ -11,6 +11,9 @@ export const useFormContext = () => {
     billingPeriod,
     plan,
     addOns,
+    updateName,
+    updateEmail,
+    updatePhoneNumber,
   } = useContext(FormContext);
 
   return {
@@ -22,5 +25,8 @@ export const useFormContext = () => {
     billingPeriod,
     plan,
     addOns,
+    updateName,
+    updateEmail,
+    updatePhoneNumber,
   };
 };
