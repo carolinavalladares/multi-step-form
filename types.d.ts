@@ -11,7 +11,7 @@ export type addonsType = {
   name: string;
   description: string;
   pricePerPeriod: {
-    monthly: string;
-    yearly: string;
+    monthly: number;
+    yearly: number;
   };
 };

@@ -1,6 +1,7 @@
 import "./App.css";
 
 import StepOne from "./components/StepOne";
+import StepThree from "./components/StepThree";
 import StepTwo from "./components/StepTwo";
 import { useFormInfo } from "./hooks/useFormInfo";
 
@@ -78,7 +79,13 @@ function App() {
       <div className="flex-1 bg-magnolia flex flex-col">
         <div className="flex-1 relative px-4 ">
           <div className=" bg-white w-full pt-7 pb-5 px-5 rounded-lg -translate-y-[74px]">
-            {step == 1 ? <StepOne /> : step == 2 ? <StepTwo /> : null}
+            {step == 1 ? (
+              <StepOne />
+            ) : step == 2 ? (
+              <StepTwo />
+            ) : step == 3 ? (
+              <StepThree />
+            ) : null}
           </div>
         </div>
 
