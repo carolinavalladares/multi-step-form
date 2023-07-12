@@ -1,16 +1,17 @@
 import "./App.css";
 
 import StepOne from "./components/StepOne";
-import { useFormContext } from "./hooks/useFormContext";
+import StepTwo from "./components/StepTwo";
+import { useFormInfo } from "./hooks/useFormInfo";
 
 function App() {
-  const { step, updateStep } = useFormContext();
+  const { step, setStep } = useFormInfo();
 
   const handlePrevStep = () => {
     if (step <= 1) {
       return;
     }
-    return updateStep(step - 1);
+    return setStep(step - 1);
   };
 
   return (
@@ -75,14 +76,16 @@ function App() {
       </div>
 
       <div className="flex-1 bg-magnolia flex flex-col">
-        <div className="flex-1 relative px-4">
+        <div className="flex-1 relative px-4 ">
           <div className=" bg-white w-full pt-7 pb-5 px-5 rounded-lg -translate-y-[74px]">
-            {step == 1 ? <StepOne /> : null}
+            {step == 1 ? <StepOne /> : step == 2 ? <StepTwo /> : null}
           </div>
         </div>
 
         {/* buttons */}
-        <div className="flex items-center justify-between p-4 bg-white">
+        <div
+          className={`flex items-center justify-between p-4 bg-white max-md:absolute max-md:bottom-0 max-md:w-full`}
+        >
           {step > 1 ? (
             <button
               onClick={handlePrevStep}

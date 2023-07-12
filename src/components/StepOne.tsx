@@ -1,4 +1,4 @@
-import { useFormContext } from "../hooks/useFormContext";
+import { useFormInfo } from "../hooks/useFormInfo";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 interface FormFields {
@@ -12,17 +12,16 @@ export default function StepOne() {
     name,
     email,
     phoneNumber,
-    updateStep,
+    setStep,
     step,
-    updateEmail,
-    updateName,
-    updatePhoneNumber,
-  } = useFormContext();
+    setEmail,
+    setName,
+    setPhoneNumber,
+  } = useFormInfo();
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<FormFields>({
     defaultValues: { name, email, phone: phoneNumber },
@@ -31,11 +30,11 @@ export default function StepOne() {
   const submit: SubmitHandler<FormFields> = (data) => {
     console.log(data);
 
-    updateName(data.name);
-    updateEmail(data.email);
-    updatePhoneNumber(data.phone);
+    setName(data.name);
+    setEmail(data.email);
+    setPhoneNumber(data.phone);
 
-    updateStep(step + 1);
+    setStep(step + 1);
   };
 
   return (

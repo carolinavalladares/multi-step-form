@@ -3,16 +3,19 @@ import { planType, billingOptionsType, addonsType } from "../../types";
 
 interface IFormContext {
   step: number;
-  updateStep: (next: number) => void;
   name: string;
   email: string;
   phoneNumber: string;
   billingPeriod: billingOptionsType;
   plan: planType | null;
   addOns: addonsType[];
-  updateName: (str: string) => void;
-  updateEmail: (str: string) => void;
-  updatePhoneNumber: (str: string) => void;
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
+  setPlan: React.Dispatch<React.SetStateAction<planType>>;
+  setBillingPeriod: React.Dispatch<React.SetStateAction<billingOptionsType>>;
+  setAddOns: React.Dispatch<React.SetStateAction<addonsType[]>>;
 }
 
 interface IProps {
@@ -28,22 +31,13 @@ export default function FormContextProvider({ children }: IProps) {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [billingPeriod, setBillingPeriod] =
     useState<billingOptionsType>("monthly");
-  const [plan, setPlan] = useState<planType | null>(null);
+  const [plan, setPlan] = useState<planType>({
+    name: "arcade",
+    icon: "/images/icon-arcade.svg",
+    tag: "",
+    pricePerPeriod: 9,
+  });
   const [addOns, setAddOns] = useState<addonsType[]>([]);
-
-  const updateStep = (next: number) => {
-    setStep(next);
-  };
-
-  const updateName = (str: string) => {
-    setName(str);
-  };
-  const updateEmail = (str: string) => {
-    setEmail(str);
-  };
-  const updatePhoneNumber = (str: string) => {
-    setPhoneNumber(str);
-  };
 
   return (
     <FormContext.Provider
@@ -52,13 +46,16 @@ export default function FormContextProvider({ children }: IProps) {
         email,
         phoneNumber,
         step,
-        updateStep,
         billingPeriod,
         plan,
         addOns,
-        updateName,
-        updateEmail,
-        updatePhoneNumber,
+        setStep,
+        setName,
+        setEmail,
+        setPhoneNumber,
+        setPlan,
+        setBillingPeriod,
+        setAddOns,
       }}
     >
       {children}

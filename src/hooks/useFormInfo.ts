@@ -1,19 +1,22 @@
 import { useContext } from "react";
 import { FormContext } from "../contexts/FormContext";
 
-export const useFormContext = () => {
+export const useFormInfo = () => {
   const {
     name,
     email,
     phoneNumber,
     step,
-    updateStep,
+    setStep,
     billingPeriod,
     plan,
     addOns,
-    updateName,
-    updateEmail,
-    updatePhoneNumber,
+    setName,
+    setEmail,
+    setPhoneNumber,
+    setPlan,
+    setBillingPeriod,
+    setAddOns,
   } = useContext(FormContext);
 
   return {
@@ -21,12 +24,15 @@ export const useFormContext = () => {
     email,
     phoneNumber,
     step,
-    updateStep,
+    setStep,
     billingPeriod,
     plan,
     addOns,
-    updateName,
-    updateEmail,
-    updatePhoneNumber,
+    setName,
+    setEmail,
+    setPhoneNumber,
+    setPlan,
+    setBillingPeriod,
+    setAddOns,
   };
 };

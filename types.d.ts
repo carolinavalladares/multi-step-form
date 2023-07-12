@@ -2,7 +2,9 @@ export type billingOptionsType = "monthly" | "yearly";
 
 export type planType = {
   name: string;
-  pricePerPeriod: string;
+  pricePerPeriod: number;
+  tag: string;
+  icon: string;
 };
 
 export type addonsType = {
