@@ -98,6 +98,7 @@ export default function StepOne() {
           }`}
           id="phone"
           placeholder="e.g. +1 234 567 890"
+          type="number"
           {...register("phone", { required: true })}
         />
 
