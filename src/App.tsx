@@ -7,7 +7,7 @@ import StepTwo from "./components/StepTwo";
 import { useFormInfo } from "./hooks/useFormInfo";
 
 function App() {
-  const { step, setStep } = useFormInfo();
+  const { step, setStep, setDone, done } = useFormInfo();
 
   const handlePrevStep = () => {
     if (step <= 1) {
@@ -93,29 +93,43 @@ function App() {
         </div>
 
         {/* buttons */}
-        <div
-          className={`flex items-center justify-between p-4 bg-white max-md:absolute max-md:bottom-0 max-md:w-full`}
-        >
-          {step > 1 ? (
-            <button
-              onClick={handlePrevStep}
-              className="font-semibold h-8 w-[86px] text-sm rounded-[4px] text-cool-gray"
-            >
-              Go Back
-            </button>
-          ) : (
-            <div></div>
-          )}
 
-          <button
-            className="bg-marine-blue text-white font-semibold h-8 w-[86px] text-sm rounded-[4px]"
-            type="submit"
-            form={`step-${step}`}
-            value="update"
+        {!done && (
+          <div
+            className={`flex items-center justify-between p-4 bg-white max-md:absolute max-md:bottom-0 max-md:w-full`}
           >
-            Next Step
-          </button>
-        </div>
+            {step > 1 ? (
+              <button
+                onClick={handlePrevStep}
+                className="font-semibold h-8 w-[86px] text-sm rounded-[4px] text-cool-gray"
+              >
+                Go Back
+              </button>
+            ) : (
+              <div></div>
+            )}
+
+            {step < 4 && (
+              <button
+                className="bg-marine-blue text-white font-semibold h-8 w-[86px] text-sm rounded-[4px]"
+                type="submit"
+                form={`step-${step}`}
+                value="update"
+              >
+                Next Step
+              </button>
+            )}
+
+            {step >= 4 && (
+              <button
+                className="bg-purplish-blue text-white  h-8 w-[86px] text-sm rounded-[4px]"
+                onClick={() => setDone(true)}
+              >
+                Confirm
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

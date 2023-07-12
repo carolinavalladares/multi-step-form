@@ -9,6 +9,7 @@ interface IFormContext {
   billingPeriod: billingOptionsType;
   plan: planType;
   addOns: addonsType[];
+  done: boolean;
   setStep: React.Dispatch<React.SetStateAction<number>>;
   setName: React.Dispatch<React.SetStateAction<string>>;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
@@ -16,6 +17,7 @@ interface IFormContext {
   setPlan: React.Dispatch<React.SetStateAction<planType>>;
   setBillingPeriod: React.Dispatch<React.SetStateAction<billingOptionsType>>;
   setAddOns: React.Dispatch<React.SetStateAction<addonsType[]>>;
+  setDone: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface IProps {
@@ -39,6 +41,8 @@ export default function FormContextProvider({ children }: IProps) {
   });
   const [addOns, setAddOns] = useState<addonsType[]>([]);
 
+  const [done, setDone] = useState(false);
+
   return (
     <FormContext.Provider
       value={{
@@ -56,6 +60,8 @@ export default function FormContextProvider({ children }: IProps) {
         setPlan,
         setBillingPeriod,
         setAddOns,
+        done,
+        setDone,
       }}
     >
       {children}

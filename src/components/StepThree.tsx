@@ -1,5 +1,4 @@
 import { useFormInfo } from "../hooks/useFormInfo";
-import { BsCheck } from "react-icons/bs";
 const addOnOptions = [
   {
     name: "Online service",
@@ -85,7 +84,12 @@ export default function StepThree() {
                       : "border-light-gray bg-transparent"
                   } `}
                 >
-                  {addOns.includes(addOn) && <BsCheck />}
+                  {addOns.includes(addOn) && (
+                    <img
+                      src="/images/icon-checkmark.svg"
+                      alt="checkmark icon"
+                    />
+                  )}
                 </div>
 
                 <div>

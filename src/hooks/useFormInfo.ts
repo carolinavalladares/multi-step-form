@@ -17,6 +17,8 @@ export const useFormInfo = () => {
     setPlan,
     setBillingPeriod,
     setAddOns,
+    done,
+    setDone,
   } = useContext(FormContext);
 
   return {
@@ -34,5 +36,7 @@ export const useFormInfo = () => {
     setPlan,
     setBillingPeriod,
     setAddOns,
+    done,
+    setDone,
   };
 };
