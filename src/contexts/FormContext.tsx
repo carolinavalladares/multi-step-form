@@ -7,7 +7,7 @@ interface IFormContext {
   email: string;
   phoneNumber: string;
   billingPeriod: billingOptionsType;
-  plan: planType | null;
+  plan: planType;
   addOns: addonsType[];
   setStep: React.Dispatch<React.SetStateAction<number>>;
   setName: React.Dispatch<React.SetStateAction<string>>;

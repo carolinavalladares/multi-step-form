@@ -1,4 +1,5 @@
 import "./App.css";
+import StepFour from "./components/StepFour";
 
 import StepOne from "./components/StepOne";
 import StepThree from "./components/StepThree";
@@ -85,6 +86,8 @@ function App() {
               <StepTwo />
             ) : step == 3 ? (
               <StepThree />
+            ) : step == 4 ? (
+              <StepFour />
             ) : null}
           </div>
         </div>
