@@ -79,7 +79,7 @@ function App() {
 
       <div className="flex-1 bg-magnolia flex flex-col">
         <div className="flex-1 relative px-4 ">
-          <div className=" bg-white w-full pt-7 pb-5 px-5 rounded-lg -translate-y-[74px]">
+          <div className=" bg-white w-full pt-7 pb-5 px-5 rounded-lg -translate-y-[74px] shadow-lg">
             {step == 1 ? (
               <StepOne />
             ) : step == 2 ? (
