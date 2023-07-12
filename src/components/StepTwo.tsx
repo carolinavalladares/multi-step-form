@@ -62,6 +62,12 @@ export default function StepTwo() {
     }
   }, [billingPeriod]);
 
+  useEffect(() => {
+    const selectedPlan = planGroup.find((item) => item.name == plan.name);
+
+    selectedPlan && setPlan(selectedPlan);
+  }, [planGroup]);
+
   const handleChangeBillingPeriod = () => {
     if (billingPeriod == "monthly") {
       setBillingPeriod("yearly");
