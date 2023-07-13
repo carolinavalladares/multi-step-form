@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { useFormInfo } from "../hooks/useFormInfo";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
@@ -11,7 +11,6 @@ interface FormFields {
 }
 
 export default function StepOne() {
-  const [value, setValue] = useState("");
   const {
     name,
     email,
@@ -23,11 +22,14 @@ export default function StepOne() {
     setPhoneNumber,
   } = useFormInfo();
 
+  const [number, setNumber] = useState(phoneNumber);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
+    setValue,
   } = useForm<FormFields>({
     defaultValues: { name, email, phone: phoneNumber },
   });
@@ -41,6 +43,10 @@ export default function StepOne() {
 
     setStep(step + 1);
   };
+
+  useEffect(() => {
+    setValue("phone", number);
+  }, [number]);
 
   return (
     <form onSubmit={handleSubmit(submit)} id="step-1">
@@ -108,15 +114,6 @@ export default function StepOne() {
         >
           Phone Number
         </label>
-        {/* <input
-          className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
-            errors.phone ? "border-rose-500" : " border-light-gray"
-          }`}
-          id="phone"
-          placeholder="e.g. +1 234 567 890"
-          type="tel"
-          {...register("phone", { required: true })}
-        /> */}
 
         <Controller
           control={control}
@@ -130,6 +127,7 @@ export default function StepOne() {
               placeholder="e.g. (234) 567 8910"
               country="US"
               {...field}
+              onChange={setNumber as (value?: any | undefined) => void}
             />
           )}
         />
