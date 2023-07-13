@@ -1,4 +1,6 @@
-# Multi step form
+# Multi-step form
+
+Multi-step form built with ReactJs, TypeScript and Tailwindcss.
 
 ### **To start the project:**
 
