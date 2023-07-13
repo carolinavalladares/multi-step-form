@@ -65,7 +65,7 @@ export default function StepOne() {
           Name
         </label>
         <input
-          className={`border  rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium  placeholder:font-medium text-sm outline-none  focus:border-marine-blue${
+          className={`border rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium  placeholder:font-medium text-sm outline-none  focus:border-marine-blue ${
             errors.name ? "border-rose-500" : " border-light-gray"
           }`}
           type="text"
@@ -75,12 +75,12 @@ export default function StepOne() {
         />
 
         {errors.name?.type == "minLength" ? (
-          <p className="absolute text-xs text-rose-500 bg-white">
+          <p className="absolute text-xs text-rose-500 bg-white top-0 right-0">
             Name must be 3 or more characters long
           </p>
         ) : errors.name?.type == "required" ? (
-          <p className="absolute text-xs text-rose-500 bg-white">
-            Name is required
+          <p className="absolute text-xs text-rose-500 bg-white top-0 right-0">
+            This field is required
           </p>
         ) : null}
       </div>
@@ -92,7 +92,7 @@ export default function StepOne() {
           Email Address
         </label>
         <input
-          className={`border  rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium placeholder:font-medium text-sm outline-none  focus:border-marine-blue${
+          className={`border  rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium placeholder:font-medium text-sm outline-none  focus:border-marine-blue ${
             errors.email ? "border-rose-500" : " border-light-gray"
           }`}
           type="email"
@@ -102,8 +102,8 @@ export default function StepOne() {
         />
 
         {errors.email && (
-          <p className="absolute text-xs text-rose-500 bg-white">
-            Email Addreess is required
+          <p className="absolute text-xs text-rose-500 bg-white top-0 right-0">
+            This field is required
           </p>
         )}
       </div>
@@ -133,8 +133,8 @@ export default function StepOne() {
         />
 
         {errors.phone && (
-          <p className="absolute text-xs text-rose-500 bg-white">
-            Phone Number is required
+          <p className="absolute text-xs text-rose-500 bg-white top-0 right-0">
+            This field is required
           </p>
         )}
       </div>

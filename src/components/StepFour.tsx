@@ -49,7 +49,7 @@ export default function StepFour() {
                 </h2>
                 <button
                   onClick={changeStep}
-                  className="text-cool-gray text-sm underline"
+                  className="text-cool-gray text-sm underline hover:text-purplish-blue transition"
                 >
                   Change
                 </button>

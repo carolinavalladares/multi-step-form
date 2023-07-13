@@ -109,7 +109,7 @@ export default function StepTwo() {
             <div
               onClick={handleChangePlan}
               id={planOption.name}
-              className={`flex items-center justify-start gap-4 p-3 rounded-lg mb-3 border md:flex-1 md:flex-col md:items-start md:h-40 cursor-pointer ${
+              className={`flex items-center justify-start gap-4 p-3 rounded-lg mb-3 border md:flex-1 md:flex-col md:items-start md:h-40 cursor-pointer hover:border-marine-blue transition ${
                 plan?.name == planOption.name
                   ? "border-marine-blue"
                   : "border-light-gray"

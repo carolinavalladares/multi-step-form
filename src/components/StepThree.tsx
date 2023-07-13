@@ -71,9 +71,9 @@ export default function StepThree() {
             <div
               onClick={handleAddOns}
               id={addOn.name}
-              className={`p-2 rounded-lg flex items-center justify-between mb-3 border md:p-4 cursor-pointer ${
+              className={`p-2 rounded-lg flex items-center justify-between mb-3 border md:p-4 cursor-pointer hover:border-marine-blue transition ${
                 addOns.includes(addOn)
-                  ? "border-purplish-blue"
+                  ? "border-purplish-blue bg-alabaster"
                   : "border-light-gray"
               }`}
               key={index}
