@@ -96,20 +96,20 @@ export default function StepTwo() {
 
   return (
     <form id="step-2" onSubmit={onSubmit}>
-      <h1 className="text-xl font-bold text-marine-blue mb-1">
+      <h1 className="text-xl font-bold text-marine-blue mb-1 md:text-3xl">
         Select your plan
       </h1>
-      <p className="text-cool-gray mb-4 max-w-[250px]">
+      <p className="text-cool-gray mb-4 max-w-[250px] md:max-w-none">
         You have the option of monthly or yearly billing.
       </p>
 
-      <div className="pb-3">
+      <div className="pb-3 md:flex md:gap-4">
         {planGroup.map((planOption, index) => {
           return (
             <div
               onClick={handleChangePlan}
               id={planOption.name}
-              className={`flex items-center justify-start gap-4 p-3 rounded-lg mb-3 border ${
+              className={`flex items-center justify-start gap-4 p-3 rounded-lg mb-3 border md:flex-1 md:flex-col md:items-start md:h-40 cursor-pointer ${
                 plan?.name == planOption.name
                   ? "border-marine-blue"
                   : "border-light-gray"
@@ -122,7 +122,7 @@ export default function StepTwo() {
                   alt={`${planOption.name} plan icon`}
                 />
               </div>
-              <div>
+              <div className="md:flex-1 md:flex md:flex-col md:justify-end">
                 <h2 className="text-marine-blue font-semibold capitalize">
                   {planOption.name}
                 </h2>
@@ -149,10 +149,10 @@ export default function StepTwo() {
         </span>
         <div
           onClick={handleChangeBillingPeriod}
-          className="relative bg-marine-blue w-10 h-5 rounded-full flex items-center"
+          className="relative bg-marine-blue w-10 h-5 rounded-full flex items-center cursor-pointer"
         >
           <div
-            className={`bg-white h-4 w-4 rounded-full relative transition-all duration-300 ${
+            className={`bg-white h-4 w-4 rounded-full relative transition-all duration-300  ${
               billingPeriod == "monthly" ? "left-[2px]" : "left-[22px]"
             }`}
           ></div>

@@ -58,8 +58,10 @@ export default function StepThree() {
   };
   return (
     <form onSubmit={onSubmit} id="step-3">
-      <h1 className="text-xl font-bold text-marine-blue mb-1">Pick add-ons</h1>
-      <p className="text-cool-gray mb-4 max-w-[270px]">
+      <h1 className="text-xl font-bold text-marine-blue mb-1 md:text-3xl">
+        Pick add-ons
+      </h1>
+      <p className="text-cool-gray mb-4 max-w-[270px] md:max-w-none">
         Add-ons help enhance your gaming experience.
       </p>
 
@@ -69,7 +71,7 @@ export default function StepThree() {
             <div
               onClick={handleAddOns}
               id={addOn.name}
-              className={`p-2 rounded-lg flex items-center justify-between mb-3 border ${
+              className={`p-2 rounded-lg flex items-center justify-between mb-3 border md:p-4 cursor-pointer ${
                 addOns.includes(addOn)
                   ? "border-purplish-blue"
                   : "border-light-gray"

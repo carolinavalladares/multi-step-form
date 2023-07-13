@@ -39,17 +39,22 @@ export default function StepOne() {
 
   return (
     <form onSubmit={handleSubmit(submit)} id="step-1">
-      <h1 className="text-xl font-bold text-marine-blue mb-1">Personal info</h1>
-      <p className="text-cool-gray mb-4 max-w-[250px]">
+      <h1 className="text-xl font-bold text-marine-blue mb-1 md:text-3xl">
+        Personal info
+      </h1>
+      <p className="text-cool-gray mb-4 max-w-[250px] md:max-w-none">
         Please provide your name, email address and phone number.
       </p>
 
-      <div className="mb-4 relative">
-        <label className="block text-marine-blue text-xs" htmlFor="name">
+      <div className="mb-4 relative md:mb-6">
+        <label
+          className="block text-marine-blue text-xs md:mb-1"
+          htmlFor="name"
+        >
           Name
         </label>
         <input
-          className={`border  rounded-sm w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
+          className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
             errors.name ? "border-rose-500" : " border-light-gray"
           }`}
           type="text"
@@ -68,12 +73,15 @@ export default function StepOne() {
           </p>
         ) : null}
       </div>
-      <div className="mb-4 relative">
-        <label className="block text-marine-blue text-xs" htmlFor="email">
+      <div className="mb-4 relative md:mb-6">
+        <label
+          className="block text-marine-blue text-xs md:mb-1"
+          htmlFor="email"
+        >
           Email Address
         </label>
         <input
-          className={`border  rounded-sm w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
+          className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
             errors.email ? "border-rose-500" : " border-light-gray"
           }`}
           type="email"
@@ -88,12 +96,15 @@ export default function StepOne() {
           </p>
         )}
       </div>
-      <div className="mb-4 relative">
-        <label className="block text-marine-blue text-xs" htmlFor="phone">
+      <div className="mb-4 relative md:mb-6">
+        <label
+          className="block text-marine-blue text-xs md:mb-1"
+          htmlFor="phone"
+        >
           Phone Number
         </label>
         <input
-          className={`border  rounded-sm w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
+          className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
             errors.phone ? "border-rose-500" : " border-light-gray"
           }`}
           id="phone"

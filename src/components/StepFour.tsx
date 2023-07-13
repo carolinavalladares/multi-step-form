@@ -34,15 +34,15 @@ export default function StepFour() {
         <ThankYouStep />
       ) : (
         <form id="step-4">
-          <h1 className="text-xl font-bold text-marine-blue mb-1">
+          <h1 className="text-xl font-bold text-marine-blue mb-1 md:text-3xl">
             Finishing up
           </h1>
-          <p className="text-cool-gray mb-4 max-w-[250px]">
+          <p className="text-cool-gray mb-4 max-w-[250px] md:max-w-none md:pb-4">
             Double-check everything looks OK before confirming.
           </p>
 
-          <div className="bg-magnolia py-4 px-3">
-            <div className="flex items-center justify-between pb-3 border-b border-light-gray">
+          <div className="bg-magnolia py-4 px-3 rounded-md md:p-6">
+            <div className="flex items-center justify-between pb-3 border-b border-light-gray md:pb-4">
               <div>
                 <h2 className="capitalize text-sm text-marine-blue font-semibold leading-none">
                   {plan.name} ({billingPeriod})
