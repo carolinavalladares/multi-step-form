@@ -141,7 +141,7 @@ function App() {
             {step > 1 ? (
               <button
                 onClick={handlePrevStep}
-                className="font-semibold h-8 w-[86px] text-sm rounded-lg text-cool-gray  "
+                className="font-medium h-8 w-[86px] text-sm rounded-lg text-cool-gray  outline-marine-blue"
               >
                 Go Back
               </button>
@@ -151,7 +151,7 @@ function App() {
 
             {step < 4 && (
               <button
-                className="bg-marine-blue text-white font-semibold h-8 w-[86px] text-sm rounded-lg md:h-10 md:w-[96px] "
+                className="bg-marine-blue text-white font-medium h-8 w-[86px] text-sm rounded-lg md:h-10 md:w-[96px] outline-marine-blue"
                 type="submit"
                 form={`step-${step}`}
                 value="update"
@@ -162,7 +162,7 @@ function App() {
 
             {step >= 4 && (
               <button
-                className="bg-purplish-blue text-white  h-8 w-[86px] text-sm rounded-lg md:h-10 md:w-[96px] "
+                className="bg-purplish-blue text-white  h-8 w-[86px] text-sm rounded-lg md:h-10 md:w-[96px] outline-marine-blue"
                 onClick={() => setDone(true)}
               >
                 Confirm

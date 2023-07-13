@@ -44,7 +44,7 @@ export default function StepFour() {
           <div className="bg-magnolia py-4 px-3 rounded-md md:p-6">
             <div className="flex items-center justify-between pb-3 border-b border-light-gray md:pb-4">
               <div>
-                <h2 className="capitalize text-sm text-marine-blue font-semibold leading-none">
+                <h2 className="capitalize text-sm text-marine-blue font-medium leading-none">
                   {plan.name} ({billingPeriod})
                 </h2>
                 <button
@@ -55,7 +55,7 @@ export default function StepFour() {
                 </button>
               </div>
 
-              <span className="text-marine-blue text-sm font-semibold">
+              <span className="text-marine-blue text-sm font-medium">
                 $
                 {`${plan.pricePerPeriod}/${
                   billingPeriod == "monthly" ? "mo" : "yr"
@@ -98,7 +98,7 @@ export default function StepFour() {
               Total (per {billingPeriod == "monthly" ? "month" : "year"})
             </span>
 
-            <span className="text-purplish-blue font-semibold ">
+            <span className="text-purplish-blue font-medium ">
               +${`${total}/${billingPeriod == "monthly" ? "mo" : "yr"}`}
             </span>
           </div>

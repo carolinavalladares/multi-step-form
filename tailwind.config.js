@@ -44,6 +44,10 @@ export default {
       fontFamily: {
         ubunto: "var(--font)",
       },
+
+      outlineColor: {
+        "marine-blue": "var(--marine-blue)",
+      },
     },
   },
   plugins: [],

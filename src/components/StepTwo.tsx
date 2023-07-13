@@ -123,7 +123,7 @@ export default function StepTwo() {
                 />
               </div>
               <div className="md:flex-1 md:flex md:flex-col md:justify-end">
-                <h2 className="text-marine-blue font-semibold capitalize">
+                <h2 className="text-marine-blue font-medium capitalize">
                   {planOption.name}
                 </h2>
                 <p className="text-sm text-cool-gray mb-1">
@@ -141,7 +141,7 @@ export default function StepTwo() {
 
       <div className="bg-magnolia flex items-center justify-center gap-4 p-3">
         <span
-          className={`text-[13px] font-semibold ${
+          className={`text-[13px] font-medium ${
             billingPeriod == "monthly" ? "text-marine-blue" : "text-cool-gray"
           }`}
         >
@@ -158,7 +158,7 @@ export default function StepTwo() {
           ></div>
         </div>
         <span
-          className={`text-[13px] font-semibold ${
+          className={`text-[13px] font-medium ${
             billingPeriod == "yearly" ? "text-marine-blue" : "text-cool-gray"
           }`}
         >

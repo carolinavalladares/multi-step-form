@@ -95,7 +95,7 @@ export default function StepThree() {
                 </div>
 
                 <div>
-                  <h2 className="font-semibold text-marine-blue text-sm  ">
+                  <h2 className="font-medium text-marine-blue text-sm   ">
                     {addOn.name}
                   </h2>
                   <p className="text-xs text-cool-gray">{addOn.description}</p>

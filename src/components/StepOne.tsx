@@ -65,7 +65,7 @@ export default function StepOne() {
           Name
         </label>
         <input
-          className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
+          className={`border  rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium  placeholder:font-medium text-sm outline-none  focus:border-marine-blue${
             errors.name ? "border-rose-500" : " border-light-gray"
           }`}
           type="text"
@@ -92,7 +92,7 @@ export default function StepOne() {
           Email Address
         </label>
         <input
-          className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
+          className={`border  rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium placeholder:font-medium text-sm outline-none  focus:border-marine-blue${
             errors.email ? "border-rose-500" : " border-light-gray"
           }`}
           type="email"
@@ -121,7 +121,7 @@ export default function StepOne() {
           rules={{ required: true }}
           render={({ field }) => (
             <PhoneInput
-              className={`border  rounded-md w-full h-9 px-3 text-cool-gray placeholder:font-normal text-sm ${
+              className={`border  rounded-md w-full h-9 px-3 placeholder:text-cool-gray text-marine-blue font-medium placeholder:font-medium text-sm  outline-none focus:border-marine-blue ${
                 errors.phone ? "border-rose-500" : " border-light-gray"
               }`}
               placeholder="e.g. (234) 567 8910"
